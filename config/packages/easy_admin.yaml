@@ -6,23 +6,7 @@ easy_admin:
       css:
         - 'https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css'
   entities:
-    Playlist:
-      list:
-        fields:
-          - { property: 'image', type: 'image', base_path: '%app.path.playlist_images%' }
-      show:
-        fields:
-          - { property: 'image', type: 'image', base_path: '%app.path.playlist_images%' }
-      form:
-        fields:
-          - { property: 'imageFile', type: 'file' }
-    Album:
-      list:
-        fields:
-          - { property: 'image', type: 'image', base_path: '%app.path.album_images%' }
-      show:
-        fields:
-          - { property: 'image', type: 'image', base_path: '%app.path.album_images%' }
-      form:
-        fields:
-          - { property: 'imageFile', type: 'file' }
+    - App\Entity\Track
+    - App\Entity\Album
+    - App\Entity\Artist
+    - App\Entity\Playlist

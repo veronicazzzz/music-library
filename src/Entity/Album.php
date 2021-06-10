@@ -7,11 +7,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=AlbumRepository::class)
- * @Vich\Uploadable
  */
 class Album
 {
@@ -37,11 +35,6 @@ class Album
      */
     private $image;
 
-    /**
-     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
-     * @var File
-     */
-    private $imageFile;
 
     /**
      * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="albums")
@@ -97,16 +90,6 @@ class Album
         $this->image = $image;
 
         return $this;
-    }
-
-    public function getImageFile(): File
-    {
-        return $this->imageFile;
-    }
-
-    public function setImageFile(File $image = null): void
-    {
-        $this->imageFile = $image;
     }
 
     public function getArtist(): ?Artist
