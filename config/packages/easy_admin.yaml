@@ -1,0 +1,28 @@
+# config/packages/easy_admin.yaml
+easy_admin:
+  design:
+    assets:
+      # all kinds of assets are supported and linked accordingly
+      css:
+        - 'https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css'
+  entities:
+    Playlist:
+      list:
+        fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.playlist_images%' }
+      show:
+        fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.playlist_images%' }
+      form:
+        fields:
+          - { property: 'imageFile', type: 'file' }
+    Album:
+      list:
+        fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.album_images%' }
+      show:
+        fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.album_images%' }
+      form:
+        fields:
+          - { property: 'imageFile', type: 'file' }
